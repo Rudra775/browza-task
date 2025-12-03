@@ -79,20 +79,23 @@ exports.updateJobStatus = async (req, res) => {
 
     // State Machine Logic
     const validTransitions = {
-      'PENDING': ['RUNNING'],
-      'RUNNING': ['COMPLETED', 'FAILED'],
-      'COMPLETED': [],
-      'FAILED': ['PENDING'] // retry
-    };
+          'PENDING': ['RUNNING'],
+          'RUNNING': ['COMPLETED', 'FAILED'],
+          'COMPLETED': [],
+          'FAILED': ['PENDING']
+        };
 
-    if (!validTransitions[job.status].includes(status)) {
-       return res.status(400).json({ 
-         message: `Invalid transition from ${job.status} to ${status}` 
-       });
-    }
+        if (!validTransitions[job.status].includes(status)) {
+          return res.status(400).json({ message: `Invalid transition` });
+        }
 
-    job.status = status;
-    await job.save();
+        // If starting the job, update the lastRunAt timestamp
+        if (status === 'RUNNING') {
+          job.lastRunAt = new Date();
+        }
+
+        job.status = status;
+        await job.save();
     
     console.log(`[LOG] Job ${job._id} status changed to ${status}`);
     res.status(200).json(job);

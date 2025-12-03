@@ -69,7 +69,7 @@ export default function JobDrawer({ job, onClose, onUpdate }: any) {
                 Budget
               </label>
               <div className="text-gray-900 font-medium">
-                ${job.budget.toLocaleString()}
+                &#8377;{job.budget.toLocaleString()}
               </div>
             </div>
             <div>
@@ -127,6 +127,15 @@ export default function JobDrawer({ job, onClose, onUpdate }: any) {
                 No further actions available.
               </p>
             )}
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
+            Last Run
+          </label>
+          <div className="text-gray-900 font-medium">
+            {job.lastRunAt ? new Date(job.lastRunAt).toLocaleString() : "Never"}
           </div>
         </div>
       </div>

@@ -29,12 +29,17 @@ export async function register(credentials: any) {
   return res.json();
 }
 
-export async function fetchJobs(status?: string) {
-  const query = status && status !== 'All' ? `?status=${status}` : '';
-  const res = await fetch(`${API_URL}/jobs${query}`, { 
+export async function fetchJobs(status?: string, search?: string) {
+  const params = new URLSearchParams();
+  
+  if (status && status !== 'All') params.append('status', status);
+  if (search) params.append('search', search);
+
+  const res = await fetch(`${API_URL}/jobs?${params.toString()}`, { 
     headers: getHeaders(), 
     cache: 'no-store' 
   });
+  
   if (res.status === 401) { window.location.href = '/login'; return []; }
   return res.json();
 }

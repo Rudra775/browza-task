@@ -26,7 +26,10 @@ const JobSchema = new mongoose.Schema({
   },
   notes: {
     type: String
-  }
+  },
+  lastRunAt: {
+    type: Date,
+  },
 }, {
   timestamps: true // Creates createdAt and updatedAt automatically
 });
