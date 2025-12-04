@@ -60,7 +60,7 @@ export default function SignupPage() {
               type="text"
               required
               className={inputClass}
-              placeholder="Alex Morgan"
+              placeholder="Dwight Schrute"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
             />
@@ -75,7 +75,7 @@ export default function SignupPage() {
               type="email"
               required
               className={inputClass}
-              placeholder="alex@company.com"
+              placeholder="dwight@schrutefarms.com"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
