@@ -1,49 +1,72 @@
-```
-# Browza - Job Management System
+\# Browza - Job Management System
 
 A full-stack SaaS dashboard to manage, track, and execute scraping jobs. Built with a focus on strict state management, security, and a clean, modern UI.
 
-## Key Features
+\## Key Features
 
-* **Secure Authentication:** Complete User Sign Up & Login system using **JWT** and **Bcrypt**.
-* **Data Isolation:** Multi-tenancy support---users can only access and modify their own jobs.
-* **Advanced Search:** Real-time search functionality to filter jobs by title.
-* **Strict State Machine:** Jobs follow a logical flow (PENDING → RUNNING → COMPLETED/FAILED) to prevent data corruption.
-* **Responsive UI:** Built with **Tailwind CSS**, featuring a slide-out details drawer and dynamic status badges.
+\* \*\*Secure Authentication:\*\* Complete User Sign Up & Login system using \*\*JWT\*\* and \*\*Bcrypt\*\*.
 
-## Tech Stack
+\* \*\*Data Isolation:\*\* Multi-tenancy support---users can only access and modify their own jobs.
 
-### **Frontend (Client)**
+\* \*\*Advanced Search:\*\* Real-time search functionality to filter jobs by title.
 
-* **Framework:** Next.js 14 (App Router)
-* **Styling:** Tailwind CSS
-* **Icons:** lucide-react
-* **State:** React Context API & Native Fetch
+\* \*\*Strict State Machine:\*\* Jobs follow a logical flow (PENDING → RUNNING → COMPLETED/FAILED) to prevent data corruption.
 
-### **Backend (Server)**
+\* \*\*Responsive UI:\*\* Built with \*\*Tailwind CSS\*\*, featuring a slide-out details drawer and dynamic status badges.
 
-* **Runtime:** Node.js & Express
-* **Database:** MongoDB & Mongoose
-* **Auth:** jsonwebtoken (JWT) & bcryptjs
+\## Tech Stack
 
-## Folder Structure
+\### \*\*Frontend (Client)\*\*
 
-```text
+\* \*\*Framework:\*\* Next.js 14 (App Router)
+
+\* \*\*Styling:\*\* Tailwind CSS
+
+\* \*\*Icons:\*\* lucide-react
+
+\* \*\*State:\*\* React Context API & Native Fetch
+
+\### \*\*Backend (Server)\*\*
+
+\* \*\*Runtime:\*\* Node.js & Express
+
+\* \*\*Database:\*\* MongoDB & Mongoose
+
+\* \*\*Auth:\*\* jsonwebtoken (JWT) & bcryptjs
+
+\## Folder Structure
+
+\`\`\`text
+
 root/
-├── backend/            # Express Server
-│   ├── src/
-│   │   ├── config/     # DB Connection
-│   │   ├── controllers/# Business Logic
-│   │   ├── models/     # DB Schemas
-│   │   ├── routes/     # API Endpoints
-│   │   └── middleware/ # Auth Protection
-│   └── server.js       # Entry Point
+
+├── backend/ # Express Server
+
+│ ├── src/
+
+│ │ ├── config/ # DB Connection
+
+│ │ ├── controllers/# Business Logic
+
+│ │ ├── models/ # DB Schemas
+
+│ │ ├── routes/ # API Endpoints
+
+│ │ └── middleware/ # Auth Protection
+
+│ └── server.js # Entry Point
+
 │
-└── frontend/           # Next.js Client
-    ├── app/            # Pages & Routes
-    ├── components/     # UI Components
-    ├── context/        # Auth Provider
-    └── lib/            # API Helpers
+
+└── frontend/ # Next.js Client
+
+├── app/ # Pages & Routes
+
+├── components/ # UI Components
+
+├── context/ # Auth Provider
+
+└── lib/ # API Helpers
 
 ```
 
